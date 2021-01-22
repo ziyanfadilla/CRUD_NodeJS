@@ -1,0 +1,36 @@
+<html>
+    <head>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+            <div class="container">
+              <h2><%= title %></h2>
+              <a href="/add" class="btn btn-sm btn-primary">Add User</a><br/><br/>
+              <table class="table table-dark table-striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone No.</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <% user.forEach(function(user){ %>
+                        <tr>
+                            <td><%= user.nama %></td>
+                            <td><%= user.email %></td>
+                            <td><%= user.telp %></td>
+                            <td>
+                                <a href="edit/<%= user.id %>" class="btn btn-sm btn-primary">Edit</a>
+                                <a href="delete/<%= user.id %>" class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+              </table>
+            </div>
+    </body>
+
+</html>
